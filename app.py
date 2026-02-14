@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, classification_report
 
 st.set_page_config(page_title="Heart Disease Classifier")
-st.title("❤️ Heart Disease Prediction App")
+st.title("Heart Disease Prediction App")
 
 # Load preprocessing objects
 scaler = joblib.load("models/scaler.pkl")
@@ -29,7 +29,7 @@ results_df = pd.read_csv("models/model_results.csv")
 model_name = st.sidebar.selectbox("Choose Model", list(model_files.keys()))
 model = joblib.load(model_files[model_name])
 
-st.subheader("📊 Model Metrics")
+st.subheader("Model Metrics")
 st.dataframe(results_df[results_df["Model"] == model_name])
 
 # Upload CSV
